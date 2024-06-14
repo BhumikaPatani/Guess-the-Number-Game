@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="game.css">
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <h1> Guess The Number GAME</h1>
+    <label>Enetr Any Number</label>
+    <input type="text" id="game" onchange="game()"><br><br>
+    <span id="hidden">No Number is Entered</span><br><br>
+    
+  </center>
+  
+
+
+<script>
+    
+  
+  
+  let random=parseInt(Math.random()*100);
+   function game()
+   {
+    let data = parseInt(document.getElementById("game").value);
+    let hidden =  document.getElementById("hidden");
+    
+    if(data==random)
+     {
+      hidden.innerHTML = "You are Right Random number is:" + random; 
+
+     }
+    else if(data<random)
+     {
+      hidden.innerHTML = "Less than random " + " please enter Bigger number";
+     }
+     else if(data>random)
+     {
+      hidden.innerHTML = "Greater than random "+ "please enter Smaller number";
+     }
+     else
+     {
+      hidden.innerHTML = "Enter number it's empty" ;
+     }
+}
+  
+</script>
+</body>
+</html>

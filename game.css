@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Courier New', Courier, monospace;
+  color: #00ff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  animation: gradient 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+center {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  border: 1px solid #00ff00;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #00ff00;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+label {
+  font-size: 1.5em;
+  color: #00ff00;
+  margin-bottom: 10px;
+  display: block;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.2em;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  background: black;
+  color: #00ff00;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff0000;
+  transform: scale(1.1);
+}
+
+#hidden {
+  display: block;
+  font-size: 1.4em;
+  margin-top: 20px;
+  color: #00ff00;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #000;
+  background: linear-gradient(45deg, #ff0000, #ff4500);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-shadow: 0 0 5px #ff4500;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff4500, #ff0000);
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hidden.correct {
+  color: #00ff00;
+  animation: popIn 0.5s ease-in-out;
+}
+
+#hidden.incorrect {
+  color: #ff0000;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25%,
+  75% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
